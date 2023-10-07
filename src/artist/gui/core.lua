@@ -424,6 +424,7 @@ function Text:initialise(options)
   self._width = field(options, "width", "number")
 
   self.fg = field(options, "fg", "string", "nil") or "white"
+  self.bg = field(options, "bg", "string", "nil") or "black"
   self:set_text(field(options, "text", "string") or "")
 end
 
@@ -446,7 +447,7 @@ Text.attach, Text.detach = basic_attach, basic_detach
 
 function Text:draw(term, palette)
   term.setTextColour(palette[self.fg])
-  term.setBackgroundColour(palette.black)
+  term.setBackgroundColour(palette[self.bg])
   term.setCursorPos(self._x, self._y)
   term.write(self._text)
 end

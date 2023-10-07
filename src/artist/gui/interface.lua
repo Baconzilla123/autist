@@ -28,7 +28,7 @@ return function(context, extract_items)
         x = x, y = y, width = dwidth, height = dheight,
         keymap = keybinding.create_keymap { ["enter"] = extract, ["C-d"] = pop_frame },
         children = {
-          gui.Text { x = x + 1, y = y + 1, width = dwidth - 2, text = "Extract: " .. item.displayName },
+          gui.Text { x = x + 1, y = y + 1, width = dwidth - 2, text = "Extract: " .. item.displayName, bg = "grey"},
           input,
           gui.Button { x = x + 1, y = y + 6, text = "Extract", bg = "green", run = extract },
           gui.Button { x = x + dwidth - 9, y = y + 6, text = "Cancel", bg = "red", run = pop_frame },
@@ -63,7 +63,7 @@ return function(context, extract_items)
       x = x, y = y, width = dwidth, height = dheight,
       keymap = keybinding.create_keymap { ["enter"] = smelt, ["C-d"] = pop_frame },
       children = {
-        gui.Text { x = x + 1, y = y + 1, width = dwidth - 2, text = "Smelt: " .. item.displayName },
+        gui.Text { x = x + 1, y = y + 1, width = dwidth - 2, text = "Smelt: " .. item.displayName, bg = "grey" },
         count_input,
         furnace_input,
         gui.Button { x = x + 1, y = y + 6, text = "Smelt", bg = "green", run = smelt },

@@ -40,7 +40,7 @@ function NumberInput:initialise(options)
   local _, value = get_value("", default)
   self.value = value
 
-  local feedback = gui.Text { x = x + 1, y = y + 3, width = width - 2, text = "" }
+  local feedback = gui.Text { x = x + 1, y = y + 3, width = width - 2, text = "", bg = "grey"}
   local input = gui.Input {
     x = x + 1, y = y + 1, width = width - 2, placeholder = placeholder, border = true,
     changed = function(line)
