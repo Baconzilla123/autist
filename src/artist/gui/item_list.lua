@@ -118,6 +118,8 @@ function ItemList:draw(term, palette)
 
   local max_width = width - 11
   local format = "%" .. max_width .. "s \149 %s"
+
+  term.setTextColour(palette.white)
   term.write(format:format("Item", "Count"))
 
   term.setTextColour(palette.lightGrey)
@@ -127,7 +129,9 @@ function ItemList:draw(term, palette)
     term.setCursorPos(1, i + self._y)
     if self._index == self._scroll + i and item then
       term.setBackgroundColour(palette.blue)
+      term.setTextColour(palette.white)
     else
+      term.setTextColour(palette.lightGrey)
       term.setBackgroundColour(palette.black)
     end
     term.clearLine()
