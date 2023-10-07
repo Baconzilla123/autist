@@ -31,7 +31,7 @@ local files = {
 local tasks = {}
 for i, path in ipairs(files) do
   tasks[i] = function()
-    local req, err = http.get("https://raw.githubusercontent.com/SquidDev-CC/artist/HEAD/src/" .. path)
+    local req, err = http.get("https://raw.githubusercontent.com/baconzilla123/autist/HEAD/src/" .. path)
     if not req then error("Failed to download " .. path .. ": " .. err, 0) end
 
     local file = fs.open(".artist.d/src/" .. path, "w")
