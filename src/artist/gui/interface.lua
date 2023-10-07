@@ -84,7 +84,7 @@ return function(context, extract_items)
       },
       children = {
         gui.Input {
-          x = 1, y = 1, width = width, fg = "white", bg = "grey", placeholder = "Search...",
+          x = 1, y = 1, width = width, fg = "white", bg = "black", placeholder = "Search...",
           changed = function(value) item_list:set_filter(value) end,
         },
         item_list,
