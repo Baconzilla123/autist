@@ -403,7 +403,7 @@ function Frame:initialise(options)
 end
 
 function Frame:draw(term, palette)
-  term.setBackgroundColour(palette.white)
+  term.setBackgroundColour(palette.black)
 
   local line = (" "):rep(self._width)
   for i = 1, self._height do
@@ -421,7 +421,7 @@ function Text:initialise(options)
   self._y = field(options, "y", "number")
   self._width = field(options, "width", "number")
 
-  self.fg = field(options, "fg", "string", "nil") or "black"
+  self.fg = field(options, "fg", "string", "nil") or "white"
   self:set_text(field(options, "text", "string") or "")
 end
 
@@ -444,7 +444,7 @@ Text.attach, Text.detach = basic_attach, basic_detach
 
 function Text:draw(term, palette)
   term.setTextColour(palette[self.fg])
-  term.setBackgroundColour(palette.white)
+  term.setBackgroundColour(palette.black)
   term.setCursorPos(self._x, self._y)
   term.write(self._text)
 end

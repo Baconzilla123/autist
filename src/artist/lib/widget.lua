@@ -15,8 +15,8 @@ local function text(options)
   local y = field(options, "y", "number")
   local text = field(options, "text", "string")
 
-  local fg = field(options, "fg", "number", "nil") or colours.black
-  local bg = field(options, "bg", "number", "nil") or colours.white
+  local fg = field(options, "fg", "number", "nil") or colours.white
+  local bg = field(options, "bg", "number", "nil") or colours.black
 
   term.setCursorPos(2, y)
   term.setTextColour(fg)
@@ -36,7 +36,7 @@ local function bar(options)
   local max_value = field(options, "max_value", "number")
 
   local fg = field(options, "fg", "number", "nil") or colours.red
-  local bg = field(options, "bg", "number", "nil") or colours.lightGrey
+  local bg = field(options, "bg", "number", "nil") or colours.grey
 
   -- Clamp the bar and prevent us rendering something infinitely long
   if value > max_value then value = max_value end
