@@ -148,9 +148,10 @@ function Button:initialise(options)
   self.run = field(options, "run", "function")
   self.fg = field(options, "fg", "string", "nil") or "white"
   self.bg = field(options, "bg", "string", "nil") or "blue"
+  self.bd = field(options, "bd", "string", "nil") or "grey"
+
   self.keymap = keybinding.create_keymap { ["enter"] = self.run }
   self._focused = false
-  self.bd = field(options, "bd", "string", "nil") or "grey"
 end
 
 Button.attach, Button.focus, Button.blur = basic_attach, basic_focus, basic_blur
