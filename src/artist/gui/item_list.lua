@@ -126,7 +126,7 @@ function ItemList:draw(term, palette)
 
     term.setCursorPos(1, i + self._y)
     if self._index == self._scroll + i and item then
-      term.setBackgroundColour(palette.grey)
+      term.setBackgroundColour(palette.black)
     else
       term.setBackgroundColour(palette.black)
     end
