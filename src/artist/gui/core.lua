@@ -93,8 +93,6 @@ local bright_colours = {
   black     = colours.black,
 }
 
-
-
 local dimmed_colours = {
   cyan      = colours.blue,
   green     = colours.brown,
@@ -157,7 +155,7 @@ end
 Button.attach, Button.focus, Button.blur = basic_attach, basic_focus, basic_blur
 
 function Button:draw(term, palette)
-  local border = self._focused and palette.cyan or palette.red
+  local border = self._focused and palette.cyan or palette.white
   draw_border(term, border, palette[self.bg], self.x, self.y, #self.text + 2, 3)
   term.setCursorPos(self.x + 1, self.y + 1)
   write_with(term, self.text, palette[self.fg], palette[self.bg])
@@ -286,7 +284,7 @@ function Input:initialise(options)
   self.y = field(options, "y", "number")
   self.width = field(options, "width", "number")
   self.fg = field(options, "fg", "string", "nil") or "white"
-  self.bg = field(options, "bg", "string", "nil") or "black"
+  self.bg = field(options, "bg", "string", "nil") or "grey"
   self.border = field(options, "border", "boolean", "nil") or false
 
   self.changed = field(options, "changed", "function", "nil") or void

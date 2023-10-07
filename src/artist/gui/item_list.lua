@@ -108,7 +108,7 @@ end
 ItemList.attach, ItemList.detach = ui.basic_attach, ui.basic_detach
 
 function ItemList:draw(term, palette)
-  term.setBackgroundColour(palette.lightGrey)
+  term.setBackgroundColour(palette.black)
   term.setTextColour(palette.white)
 
   term.setCursorPos(1, self._y)
@@ -126,9 +126,9 @@ function ItemList:draw(term, palette)
 
     term.setCursorPos(1, i + self._y)
     if self._index == self._scroll + i and item then
-      term.setBackgroundColour(palette.lightGrey)
-    else
       term.setBackgroundColour(palette.grey)
+    else
+      term.setBackgroundColour(palette.black)
     end
     term.clearLine()
 
