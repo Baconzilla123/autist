@@ -102,7 +102,7 @@ local dimmed_colours = {
   red       = colours.magenta,
   white     = colours.orange,
   black     = colours.black,
-  blue      = colours.white,
+  --blue      = colours.white,
 }
 
 --- Set up the palette, defining normal and dimmed colours.
