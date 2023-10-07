@@ -126,7 +126,7 @@ function ItemList:draw(term, palette)
 
     term.setCursorPos(1, i + self._y)
     if self._index == self._scroll + i and item then
-      term.setBackgroundColour(palette.black)
+      term.setBackgroundColour(palette.blue)
     else
       term.setBackgroundColour(palette.black)
     end
@@ -164,7 +164,8 @@ function ItemList:draw(term, palette)
 
       -- Setup our context for rendering
       local format = " %" .. maxk .. "s: %-" .. maxv .. "s "
-      term.setBackgroundColour(palette.grey)
+      term.setBackgroundColour(palette.blue)
+      term.setTextColour(palette.white)
 
       -- Write some padding beforehand
       term.setCursorPos(x, self._y + self._height - count - 1)
