@@ -164,7 +164,7 @@ function ItemList:draw(term, palette)
 
       -- Setup our context for rendering
       local format = " %" .. maxk .. "s: %-" .. maxv .. "s "
-      term.setBackgroundColour(palette.cyan)
+      term.setBackgroundColour(palette.grey)
 
       -- Write some padding beforehand
       term.setCursorPos(x, self._y + self._height - count - 1)
