@@ -150,12 +150,13 @@ function Button:initialise(options)
   self.bg = field(options, "bg", "string", "nil") or "blue"
   self.keymap = keybinding.create_keymap { ["enter"] = self.run }
   self._focused = false
+  self.bd = field(options, "bd", "string", "nil") or "grey"
 end
 
 Button.attach, Button.focus, Button.blur = basic_attach, basic_focus, basic_blur
 
 function Button:draw(term, palette)
-  local border = self._focused and palette.blue or palette.white
+  local border = self._focused and palette.blue or self.bd
   draw_border(term, border, palette[self.bg], self.x, self.y, #self.text + 2, 3)
   term.setCursorPos(self.x + 1, self.y + 1)
   write_with(term, self.text, palette[self.fg], palette[self.bg])
@@ -357,7 +358,7 @@ end
 
 function Input:draw(term, palette, always)
   if self.border and always then
-    draw_border(term, palette.white, palette[self.bg], self.x - 1, self.y - 1, self.width + 2, 3)
+    draw_border(term, palette.grey palette[self.bg], self.x - 1, self.y - 1, self.width + 2, 3)
   end
 
   local line = self.line
@@ -403,7 +404,7 @@ function Frame:initialise(options)
 end
 
 function Frame:draw(term, palette)
-  term.setBackgroundColour(palette.black)
+  term.setBackgroundColour(palette.grey)
 
   local line = (" "):rep(self._width)
   for i = 1, self._height do
