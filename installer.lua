@@ -46,4 +46,4 @@ parallel.waitForAll(table.unpack(tasks))
 
 io.open("artist.lua", "w"):write('shell.run(".artist.d/src/launch.lua")'):close()
 
-print("Artist successfully installed! Run /artist.lua to start.")
+print("Autist successfully installed! Run /artist.lua to start. :D")
