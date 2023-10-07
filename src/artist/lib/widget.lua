@@ -35,7 +35,7 @@ local function bar(options)
   local value = field(options, "value", "number")
   local max_value = field(options, "max_value", "number")
 
-  local fg = field(options, "fg", "number", "nil") or colours.red
+  local fg = field(options, "fg", "number", "nil") or colours.blue
   local bg = field(options, "bg", "number", "nil") or colours.grey
 
   -- Clamp the bar and prevent us rendering something infinitely long

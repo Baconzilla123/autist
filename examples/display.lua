@@ -33,8 +33,8 @@ return function(context)
 
   local monitor = peripheral.find("monitor")
   local function redraw()
-    monitor.setTextColour(colours.black)
-    monitor.setBackgroundColour(colours.white)
+    monitor.setTextColour(colours.white)
+    monitor.setBackgroundColour(colours.black)
     monitor.clear()
 
     local used_slots, full_slots, total_slots = 0, 0, 0
