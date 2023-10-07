@@ -91,6 +91,7 @@ local bright_colours = {
   red       = colours.red,
   white     = colours.white,
   black     = colours.black,
+  blue      = colours.blue
 }
 
 local dimmed_colours = {
