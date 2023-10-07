@@ -108,7 +108,7 @@ end
 ItemList.attach, ItemList.detach = ui.basic_attach, ui.basic_detach
 
 function ItemList:draw(term, palette)
-  term.setBackgroundColour(palette.black)
+  term.setBackgroundColour(palette.grey)
   term.setTextColour(palette.white)
 
   term.setCursorPos(1, self._y)
@@ -120,13 +120,13 @@ function ItemList:draw(term, palette)
   local format = "%" .. max_width .. "s \149 %s"
   term.write(format:format("Item", "Count"))
 
-  term.setTextColour(palette.white)
+  term.setTextColour(palette.lightGrey)
   for i = 1, self._height - 1 do
     local item = self._display_items[self._scroll + i]
 
     term.setCursorPos(1, i + self._y)
     if self._index == self._scroll + i and item then
-      term.setBackgroundColour(palette.grey)
+      term.setBackgroundColour(palette.black)
     else
       term.setBackgroundColour(palette.black)
     end
