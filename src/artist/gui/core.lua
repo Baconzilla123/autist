@@ -86,11 +86,11 @@ end
 local bright_colours = {
   cyan      = colours.cyan,
   green     = colours.green,
-  grey      = colours.grey,
-  lightGrey = colours.lightGrey,
+  grey      = colours.black,
+  lightGrey = colours.grey,
   red       = colours.red,
   white     = colours.white,
-  black     = colours.black,
+  black     = colours.lightGrey,
 }
 
 local dimmed_colours = {
