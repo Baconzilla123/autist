@@ -91,17 +91,18 @@ local bright_colours = {
   red       = colours.red,
   white     = colours.white,
   black     = colours.black,
-  blue      = colours.blue
+  blue      = colours.blue,
 }
 
 local dimmed_colours = {
-  cyan      = colours.blue,
+  cyan      = colours.cyan,
   green     = colours.brown,
   grey      = colours.lightBlue,
   lightGrey = colours.lime,
   red       = colours.magenta,
   white     = colours.orange,
   black     = colours.black,
+  blue      = colours.white,
 }
 
 --- Set up the palette, defining normal and dimmed colours.
