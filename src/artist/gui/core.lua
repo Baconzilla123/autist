@@ -358,7 +358,7 @@ end
 
 function Input:draw(term, palette, always)
   if self.border and always then
-    draw_border(term, palette.grey palette[self.bg], self.x - 1, self.y - 1, self.width + 2, 3)
+    draw_border(term, palette.grey, palette[self.bg], self.x - 1, self.y - 1, self.width + 2, 3)
   end
 
   local line = self.line
