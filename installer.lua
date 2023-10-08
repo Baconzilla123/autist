@@ -47,7 +47,7 @@ parallel.waitForAll(table.unpack(tasks))
 io.open("artist.lua", "w"):write('shell.run(".artist.d/src/launch.lua")'):close()
 
 
-if peripheral.find("monitor") ~= nil then
+if #peripheral.find("monitor") > 0 then
   local req, err = http.get("https://raw.githubusercontent.com/baconzilla123/autist/HEAD/examples/display.lua")
   if not req then error("Failed to download Monitor Extension: " .. err, 0) end
 

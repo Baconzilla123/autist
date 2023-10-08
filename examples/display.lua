@@ -37,7 +37,7 @@ return function(context)
     monitor.setBackgroundColour(colours.black)
     monitor.clear()
 
-    local used_slots, full_slots, total_slots, held_items, full_percentage, empty_percentage, empty_slots, = 0, 0, 0, 0, 0, 0, 0
+    local used_slots, full_slots, total_slots, held_items, full_percentage, empty_percentage, empty_slots = 0, 0, 0, 0, 0, 0, 0
     for _, inventory in pairs(items.inventories) do
       for _, slot in pairs(inventory.slots or {}) do
         total_slots = total_slots + 1
