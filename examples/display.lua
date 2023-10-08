@@ -60,8 +60,8 @@ return function(context)
       end
     end
 
-    full_percentage = math.round((full_slots/total_slots) * 100)
-    empty_percentage = math.round((empty_slots/total_slots) * 100)
+    full_percentage = math.ceil((full_slots/total_slots) * 100)
+    empty_percentage = math.ceil((empty_slots/total_slots) * 100)
 
     --widget.text { term = monitor, y = 2, text = ("Slots: %d/%d"):format(used_slots, total_slots) }
     --widget.bar  { term = monitor, y = 3, value = used_slots, max_value = total_slots }
