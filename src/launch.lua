@@ -1,7 +1,7 @@
 local context = require "artist"()
 
 -- Feel free to include custom modules here:
-if peripheral.find("monitor") ~= nil then
+if #peripheral.find("monitor") > 0 then
     context:require "display"
 end
 
