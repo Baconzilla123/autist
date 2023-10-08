@@ -1,3 +1,7 @@
+
+print("Checking For Updates...")
+shell.run("../update.lua")
+
 local context = require "artist"()
 
 -- Feel free to include custom modules here:

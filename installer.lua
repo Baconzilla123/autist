@@ -57,8 +57,17 @@ if peripheral.find("monitor") then
 
   req.close()
 
-  print(peripheral.find("monitor"))
+  --print(peripheral.find("monitor"))
 end
+
+local req, err = http.get("https://raw.githubusercontent.com/baconzilla123/autist/HEAD/installer.lua")
+if not req then error("Failed to download Updater: " .. err, 0) end
+
+local file = fs.open(".artist.d/update.lua", "w")
+file.write(req.readAll())
+file.close()
+
+req.close()
 
 
 print("Autist successfully installed! Run /artist.lua to start. :D")
