@@ -37,13 +37,15 @@ return function(context)
     monitor.setBackgroundColour(colours.black)
     monitor.clear()
 
-    local used_slots, full_slots, total_slots = 0, 0, 0
+    local used_slots, full_slots, total_slots, held_items, full_percentage, empty_percentage, empty_slots, = 0, 0, 0, 0, 0, 0, 0
     for _, inventory in pairs(items.inventories) do
       for _, slot in pairs(inventory.slots or {}) do
         total_slots = total_slots + 1
 
         if slot.count > 0 then
-          used_slots = used_slots + 1
+          used_slots += 1
+          held_items += slot.count
+          
           -- Look up the item's metadata in the cache to get the max stack size.
           -- If the item isn't available, assume the slot is full.
           local item = items.item_cache[slot.hash]
@@ -52,15 +54,26 @@ return function(context)
           else
             full_slots = full_slots + 1
           end
+        else
+          empty_slots += 1
         end
       end
     end
 
-    widget.text { term = monitor, y = 2, text = ("Slots: %d/%d"):format(used_slots, total_slots) }
-    widget.bar  { term = monitor, y = 3, value = used_slots, max_value = total_slots }
+    full_percentage = math.round((full_slots/total_slots) * 100)
+    empty_percentage = math.round((empty_slots/total_slots) * 100)
 
-    widget.text { term = monitor, y = 5, text = ("Slots (full): %.1f/%d"):format(full_slots, total_slots) }
-    widget.bar  { term = monitor, y = 6, value = full_slots, max_value = total_slots }
+    --widget.text { term = monitor, y = 2, text = ("Slots: %d/%d"):format(used_slots, total_slots) }
+    --widget.bar  { term = monitor, y = 3, value = used_slots, max_value = total_slots }
+
+    --widget.text { term = monitor, y = 5, text = ("Slots (full): %.1f/%d"):format(full_slots, total_slots) }
+    --widget.bar  { term = monitor, y = 6, value = full_slots, max_value = total_slots }
+
+    widget.text { term = monitor, y = 2, text = ("Space Used: %d"):format(full_percentage) }
+    widget.bar  { term = monitor, y = 3, value = full_percentage, max_value = 100 }
+
+    widget.text { term = monitor, y = 5, text = ("Space Free: %d"):format(empty_percentage) }
+    widget.bar  { term = monitor, y = 6, value = empty_percentage, max_value = 100 }
 
     local hot_furnaces, cold_furnaces = 0, 0
     for _ in pairs(furnaces.hot_furnaces) do hot_furnaces = hot_furnaces + 1 end
