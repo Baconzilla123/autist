@@ -43,8 +43,8 @@ return function(context)
         total_slots = total_slots + 1
 
         if slot.count > 0 then
-          used_slots += 1
-          held_items += slot.count
+          used_slots = used_slots + 1
+          held_items = held_items + slot.count
           
           -- Look up the item's metadata in the cache to get the max stack size.
           -- If the item isn't available, assume the slot is full.
@@ -55,7 +55,7 @@ return function(context)
             full_slots = full_slots + 1
           end
         else
-          empty_slots += 1
+          empty_slots = empty_slots + 1
         end
       end
     end
