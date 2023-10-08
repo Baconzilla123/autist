@@ -58,6 +58,7 @@ if peripheral.find("monitor") then
   req.close()
 
   --print(peripheral.find("monitor"))
+  print("Autist Display Extension successfully installed!")
 end
 
 local req, err = http.get("https://raw.githubusercontent.com/baconzilla123/autist/HEAD/installer.lua")
@@ -69,5 +70,5 @@ file.close()
 
 req.close()
 
-
+print("Autist Updater successfully installed!")
 print("Autist successfully installed! Run /artist.lua to start. :D")
