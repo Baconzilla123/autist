@@ -46,4 +46,17 @@ parallel.waitForAll(table.unpack(tasks))
 
 io.open("artist.lua", "w"):write('shell.run(".artist.d/src/launch.lua")'):close()
 
+
+if peripheral.find("monitor") ~= nil then
+  local req, err = http.get("https://raw.githubusercontent.com/baconzilla123/autist/HEAD/examples/display.lua")
+  if not req then error("Failed to download Monitor Extension: " .. err, 0) end
+
+  local file = fs.open(".artist.d/src/display.lua", "w")
+  file.write(req.readAll())
+  file.close()
+
+  req.close()
+end
+
+
 print("Autist successfully installed! Run /artist.lua to start. :D")
