@@ -68,18 +68,20 @@ return function(context)
 
     --widget.text { term = monitor, y = 5, text = ("Slots (full): %.1f/%d"):format(full_slots, total_slots) }
     --widget.bar  { term = monitor, y = 6, value = full_slots, max_value = total_slots }
+    widget.text { term = monitor, y = 1, text = "Storage System Info" }
 
-    widget.text { term = monitor, y = 2, text = ("Space Used: %d%s"):format(full_percentage, "%") }
-    widget.bar  { term = monitor, y = 3, value = full_percentage, max_value = 100 }
 
-    widget.text { term = monitor, y = 5, text = ("Space Free: %d%s"):format(empty_percentage, "%") }
-    widget.bar  { term = monitor, y = 6, value = empty_percentage, max_value = 100 }
+    widget.text { term = monitor, y = 3, text = ("Space Used: %d%s"):format(full_percentage, "%") }
+    widget.bar  { term = monitor, y = 4, value = full_percentage, max_value = 100 }
+
+    widget.text { term = monitor, y = 6, text = ("Space Free: %d%s"):format(empty_percentage, "%") }
+    widget.bar  { term = monitor, y = 7, value = empty_percentage, max_value = 100 }
 
     local hot_furnaces, cold_furnaces = 0, 0
     for _ in pairs(furnaces.hot_furnaces) do hot_furnaces = hot_furnaces + 1 end
     for _ in pairs(furnaces.cold_furnaces) do cold_furnaces = cold_furnaces + 1 end
-    widget.text { term = monitor, y = 9, text = ("Furnaces: %d/%d"):format(hot_furnaces, hot_furnaces + cold_furnaces) }
-    widget.bar  { term = monitor, y = 10, value = hot_furnaces, max_value = hot_furnaces + cold_furnaces }
+    widget.text { term = monitor, y = 10, text = ("Furnaces: %d/%d"):format(hot_furnaces, hot_furnaces + cold_furnaces) }
+    widget.bar  { term = monitor, y = 11, value = hot_furnaces, max_value = hot_furnaces + cold_furnaces }
   end
 
   --[[
