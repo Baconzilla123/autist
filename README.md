@@ -13,7 +13,7 @@ https://user-images.githubusercontent.com/4346137/159051788-2664b57e-b184-4e1d-b
 
 ## Install
  - Place down a turtle and some chests, and connect them all together with wired modems and networking cable.
- - Run `wget run https://raw.githubusercontent.com/SquidDev-CC/artist/HEAD/installer.lua` on your computer to install artist.
+ - Run `wget run https://raw.githubusercontent.com/Baconzilla123/autist/HEAD/installer.lua` on your computer to install artist.
  - Run `/artist.lua` to start it. You may want to call this from your `startup.lua` file!
 
 ## Basic usage
