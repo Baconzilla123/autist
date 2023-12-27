@@ -103,7 +103,7 @@ return function(context, extract_items)
       keymap = keybinding.create_keymap {
         ["C-d"] = function() ui:pop() end,
         ["C-S-f"] = push_furnace,
-        ["C-S-e"] = shell.run("reboot"),
+        ["C-S-e"] = function() shell.run("reboot") end,
       },
       children = {
         gui.Input {
