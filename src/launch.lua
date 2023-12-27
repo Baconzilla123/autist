@@ -6,7 +6,7 @@ local req, err = http.get("https://raw.githubusercontent.com/baconzilla123/autis
 if not req then 
     error("Version Fetch failed: " .. err, 0) 
 else
-    local file = fs.open(".artist.d/version", "r")
+    local file = fs.open(".artist.d/version.txt", "r")
     local version = file.readLine()
     
     if version ~= req.readAll() then

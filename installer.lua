@@ -70,5 +70,17 @@ file.close()
 
 req.close()
 
+local req, err = http.get("https://raw.githubusercontent.com/baconzilla123/autist/HEAD/version.txt")
+if not req then 
+    error("Version Fetch failed: " .. err, 0) 
+else
+    local versionfile = fs.open(".artist.d/version.txt", "w")
+    versionfile.write(req.readAll())
+    versionfile.close()
+end
+
+req.close()
+
+
 print("Autist Updater successfully installed!")
 print("Autist successfully installed! Run /artist.lua to start. :D")
