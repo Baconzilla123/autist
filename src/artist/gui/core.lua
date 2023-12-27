@@ -161,7 +161,7 @@ end
 Button.attach, Button.focus, Button.blur = basic_attach, basic_focus, basic_blur
 
 function Button:draw(term, palette)
-  term.setTextColour(palette.lightGrey)
+  term.setTextColour(palette.black)
   if self.sbd then
     local border = self._focused and palette.blue or palette[self.bd]
     draw_border(term, border, palette[self.bg], self.x, self.y, #self.text + 2, 3)
