@@ -26,7 +26,7 @@ end
 
 req.close()
 
-wait(4)
+--wait(4)
 
 local context = require "artist"()
 
