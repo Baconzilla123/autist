@@ -88,7 +88,7 @@ return function(context, extract_items)
         gui.Text { x = x + 1, y = y + 4, width = dwidth - 3, text = "Extra", bg = "grey" },
         gui.Text { x = x + 2, y = y + 4, width = dwidth - 4, text = "Right click the search bar to clear", bg = "grey" },
 
-        gui.Button { x = x + dwidth - 9, y = y + 6, text = "Close", bg = "red", sbd = false, run = pop_frame },
+        gui.Button { x = x + dwidth - 9, y = y + 6, text = "Close", bg = "red", bd = "grey", run = pop_frame },
       },
     })
   end
@@ -109,7 +109,7 @@ return function(context, extract_items)
           changed = function(value) item_list:set_filter(value) end,
         },
         item_list,
-        gui.Button {x = width - 1, y = height - 1, text = "?", bg = "blue", run = push_help },
+        gui.Button {x = width - 1, y = height - 1, text = "?", bg = "blue", sbd = false, run = push_help },
       },
     }
 
