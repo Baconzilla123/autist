@@ -151,6 +151,8 @@ function Button:initialise(options)
   self.fg = field(options, "fg", "string", "nil") or "white"
   self.bg = field(options, "bg", "string", "nil") or "blue"
   self.bd = field(options, "bd", "string", "nil") or "grey"
+  
+  self.sbd = field(options, "sbd", "boolean", "nil") or true
 
   self.keymap = keybinding.create_keymap { ["enter"] = self.run }
   self._focused = false
@@ -159,8 +161,11 @@ end
 Button.attach, Button.focus, Button.blur = basic_attach, basic_focus, basic_blur
 
 function Button:draw(term, palette)
-  local border = self._focused and palette.blue or palette[self.bd]
-  draw_border(term, border, palette[self.bg], self.x, self.y, #self.text + 2, 3)
+  if self.sbd then
+    local border = self._focused and palette.blue or palette[self.bd]
+    draw_border(term, border, palette[self.bg], self.x, self.y, #self.text + 2, 3)
+  end
+  
   term.setCursorPos(self.x + 1, self.y + 1)
   write_with(term, self.text, palette[self.fg], palette[self.bg])
 end
