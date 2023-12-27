@@ -11,6 +11,8 @@ else
     
     if version ~= req.readAll() then
         print("Version "..version.." Does not match "..req:readAll())
+    else
+        print("Version "..version.." Does match "..req:readAll())
     end
 
     --file.write(req.readAll())
