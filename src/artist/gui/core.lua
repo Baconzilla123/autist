@@ -357,6 +357,10 @@ function Input:handle_event(args)
     -- Then ensure we don't scroll beyond the current line
     set_pos(self, clamp(self.scroll + x - self.x, 0, #self.line))
   end
+
+  if (event == "mouse_click" or event == "mouse_drag") and args[2] == 2 and args[4] == self.y then
+    self.line = ""
+  end
 end
 
 function Input:draw(term, palette, always)
