@@ -8,7 +8,7 @@ if not req then
 else
     local file = fs.open(".artist.d/version.txt", "r")
     local version = file.readLine()
-    local target = req.readAll()
+    local target = req.readLine()
 
     if version ~= target then
         error("Version "..version.." Does not match "..target, 0)
