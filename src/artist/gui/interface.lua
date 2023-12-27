@@ -72,6 +72,27 @@ return function(context, extract_items)
     })
   end
 
+  local function push_help()
+    local dwidth, dheight = math.min(width - 2, 30), 10
+    local x, y = math.floor((width - dwidth) / 2) + 1, math.floor((height - dheight) / 2) + 1
+
+    ui:push(gui.Frame {
+      x = x, y = y, width = dwidth, height = dheight,
+      children = {
+        gui.Text { x = x + 1, y = y + 1, width = dwidth - 2, text = "Autist Help", bg = "grey" },
+
+        gui.Text { x = x + 2, y = y + 3, width = dwidth - 3, text = "Keybinds", bg = "grey" },
+        gui.Text { x = x + 3, y = y + 4, width = dwidth - 4, text = "Smelt Item: Ctrl + Shift + F", bg = "grey" },
+        gui.Text { x = x + 3, y = y + 5, width = dwidth - 4, text = "Item Info: Tab", bg = "grey" },
+
+        gui.Text { x = x + 2, y = y + 4, width = dwidth - 3, text = "Extra", bg = "grey" },
+        gui.Text { x = x + 3, y = y + 4, width = dwidth - 4, text = "Right click the search bar to clear", bg = "grey" },
+
+        gui.Button { x = x + dwidth - 9, y = y + 6, text = "Close", bg = "red", run = pop_frame },
+      },
+    })
+  end
+
   -- When we receive an item difference we update the item list. This schedules
   -- a redraw if required.
   context.mediator:subscribe("item_list.update", function(items) item_list:update_items(items) end)
@@ -88,6 +109,7 @@ return function(context, extract_items)
           changed = function(value) item_list:set_filter(value) end,
         },
         item_list,
+        gui.Button {x = 10, y = 10, text = "Help", bg = "blue", run = push_help },
       },
     }
 
