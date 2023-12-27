@@ -94,6 +94,10 @@ return function(context, extract_items)
     })
   end
 
+  local function exit()
+    shell.run("reboot") 
+  end
+
   -- When we receive an item difference we update the item list. This schedules
   -- a redraw if required.
   context.mediator:subscribe("item_list.update", function(items) item_list:update_items(items) end)
@@ -103,7 +107,7 @@ return function(context, extract_items)
       keymap = keybinding.create_keymap {
         ["C-d"] = function() ui:pop() end,
         ["C-S-f"] = push_furnace,
-        ["C-S-e"] = function() shell.run("reboot") end,
+        ["C-S-e"] = exit,
       },
       children = {
         gui.Input {
