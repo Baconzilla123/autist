@@ -8,15 +8,16 @@ if not req then
 else
     local file = fs.open(".artist.d/version.txt", "r")
     local version = file.readLine()
-    
-    if version ~= req.readAll() then
-        error("Version "..version.." Does not match "..req:readAll(), 0)
+    local target = req.readAll()
+
+    if version ~= target then
+        error("Version "..version.." Does not match "..target, 0)
 
         shell.run("wget run https://raw.githubusercontent.com/baconzilla123/autist/HEAD/installer.lua")
         print(" ")
         print("Updated! \n")
     else
-        error("Version "..version.." Does match "..req:readAll(), 0)
+        error("Version "..version.." Does match "..target, 0)
     end
     --file.write(req.readAll())
 end
