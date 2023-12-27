@@ -73,7 +73,7 @@ return function(context, extract_items)
   end
 
   local function push_help()
-    local dwidth, dheight = math.min(width - 2, 30), math.min(height - 2, 20)
+    local dwidth, dheight = (width - 2), (height - 2)
     local x, y = math.floor((width - dwidth) / 2) + 1, math.floor((height - dheight) / 2) + 1
     --term.setBackgroundColour()
     ui:push(gui.Frame {
