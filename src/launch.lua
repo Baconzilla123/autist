@@ -10,13 +10,13 @@ else
     local version = file.readLine()
     
     if version ~= req.readAll() then
-        error("Version "..version.." Does not match "..req:readAll())
+        error("Version "..version.." Does not match "..req:readAll(), 0)
 
         shell.run("wget run https://raw.githubusercontent.com/baconzilla123/autist/HEAD/installer.lua")
         print(" ")
         print("Updated! \n")
     else
-        error("Version "..version.." Does match "..req:readAll())
+        error("Version "..version.." Does match "..req:readAll(), 0)
     end
 
     --file.write(req.readAll())
