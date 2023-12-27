@@ -152,7 +152,7 @@ function Button:initialise(options)
   self.bg = field(options, "bg", "string", "nil") or "blue"
   self.bd = field(options, "bd", "string", "nil") or "grey"
   
-  self.sbd = field(options, "sbd", "boolean") or true
+  --self.sbd = field(options, "sbd", "boolean") or true
 
   self.keymap = keybinding.create_keymap { ["enter"] = self.run }
   self._focused = false
