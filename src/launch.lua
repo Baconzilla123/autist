@@ -1,4 +1,4 @@
---function wait(seconds) local start = os.time() repeat until os.time() > start + seconds end
+function wait(seconds) local start = os.time() repeat until os.time() > start + seconds end
 
 print("Checking For Updates...")
 
@@ -18,11 +18,10 @@ else
     else
         error("Version "..version.." Does match "..req:readAll(), 0)
     end
-
     --file.write(req.readAll())
 end
 
---wait(4)
+wait(4)
 
 local context = require "artist"()
 
