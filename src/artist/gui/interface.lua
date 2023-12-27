@@ -83,12 +83,13 @@ return function(context, extract_items)
 
         gui.Text { x = x + 1, y = y + 3, width = dwidth - 3, text = "Keybinds", bg = "grey" },
         gui.Text { x = x + 2, y = y + 4, width = dwidth - 4, text = "Smelt Item: Ctrl + Shift + F", bg = "grey" },
-        gui.Text { x = x + 2, y = y + 5, width = dwidth - 4, text = "Item Info: Tab", bg = "grey" },
+        gui.Text { x = x + 2, y = y + 5, width = dwidth - 4, text = "Quit Artist: Ctrl + Shift + E", bg = "grey" },
+        gui.Text { x = x + 2, y = y + 6, width = dwidth - 4, text = "Item Info: Tab", bg = "grey" },
 
-        gui.Text { x = x + 1, y = y + 4, width = dwidth - 3, text = "Extra", bg = "grey" },
-        gui.Text { x = x + 2, y = y + 4, width = dwidth - 4, text = "Right click the search bar to clear", bg = "grey" },
+        gui.Text { x = x + 1, y = y + 7, width = dwidth - 3, text = "Extra", bg = "grey" },
+        gui.Text { x = x + 2, y = y + 8, width = dwidth - 4, text = "Right click the search bar to clear", bg = "grey" },
 
-        gui.Button { x = x + dwidth - 9, y = y + 6, text = "Close", bg = "red", bd = "grey", run = pop_frame },
+        gui.Button { x = x + dwidth - 9, y = y + 9, text = "Close", bg = "red", bd = "grey", run = pop_frame },
       },
     })
   end
@@ -102,6 +103,7 @@ return function(context, extract_items)
       keymap = keybinding.create_keymap {
         ["C-d"] = function() ui:pop() end,
         ["C-S-f"] = push_furnace,
+        ["C-S-e"] = shell.run("reboot"),
       },
       children = {
         gui.Input {
