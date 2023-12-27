@@ -360,7 +360,7 @@ function Input:handle_event(args)
 
   if (event == "mouse_click" or event == "mouse_drag") and args[2] == 2 and args[4] == self.y then
     --self.line = ""
-    self:set_line("")
+    self:set_line(self, "")
   end
 end
 
