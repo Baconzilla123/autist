@@ -10,17 +10,18 @@ else
     local version = file.readLine()
     
     if version ~= req.readAll() then
-        print("Version "..version.." Does not match "..req:readAll())
+        error("Version "..version.." Does not match "..req:readAll())
+
+        shell.run("wget run https://raw.githubusercontent.com/baconzilla123/autist/HEAD/installer.lua")
+        print(" ")
+        print("Updated! \n")
     else
-        print("Version "..version.." Does match "..req:readAll())
+        error("Version "..version.." Does match "..req:readAll())
     end
 
     --file.write(req.readAll())
 end
 
-shell.run("wget run https://raw.githubusercontent.com/baconzilla123/autist/HEAD/installer.lua")
-print(" ")
-print("Updated! \n")
 --wait(4)
 
 local context = require "artist"()
