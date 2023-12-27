@@ -13,13 +13,13 @@ else
     print("Online Version:" ..target)
 
     if version ~= target then
-        print("Version "..version.." Does not match "..target, 0)
+        print("Version "..version.." Does not match "..target)
 
         shell.run("wget run https://raw.githubusercontent.com/baconzilla123/autist/HEAD/installer.lua")
         print(" ")
         print("Updated! \n")
     else
-        print("Version "..version.." Does match "..target, 0)
+        print("Version "..version.." Does match "..target)
     end
     --file.write(req.readAll())
 end
