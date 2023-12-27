@@ -109,7 +109,7 @@ return function(context, extract_items)
           changed = function(value) item_list:set_filter(value) end,
         },
         item_list,
-        gui.Button {x = width - 1, y = height - 1, text = "?", bg = "blue", sbd = false, run = push_help },
+        gui.Button {x = width - 1, y = height - 1, text = "?", fg = "white", bg = "blue", sbd = false, run = push_help },
       },
     }
 
