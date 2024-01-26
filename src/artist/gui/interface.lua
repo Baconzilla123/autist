@@ -76,6 +76,7 @@ return function(context, extract_items)
     local dwidth, dheight = (width - 2), (height - 2)
     local x, y = math.floor((width - dwidth) / 2) + 1, math.floor((height - dheight) / 2) + 1
     --term.setBackgroundColour()
+    --[[
     ui:push(gui.Frame {
       x = x, y = y, width = dwidth, height = dheight,
       children = {
@@ -92,6 +93,7 @@ return function(context, extract_items)
         gui.Button { x = dwidth - 4, y = dheight - 1, text = "Close", bg = "red", bd = "grey", run = pop_frame },
       },
     })
+    ]]
   end
 
   --local function exit()
@@ -115,7 +117,7 @@ return function(context, extract_items)
           changed = function(value) item_list:set_filter(value) end,
         },
         item_list,
-        gui.Button {x = width - 1, y = height - 1, text = "?", fg = "white", bg = "blue", bd = "black", run = push_help },
+        --gui.Button {x = width - 1, y = height - 1, text = "?", fg = "white", bg = "blue", bd = "black", run = push_help },
       },
     }
 
