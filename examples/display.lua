@@ -73,7 +73,7 @@ return function(context)
     
 
 
-    widget.text { term = monitor, y = 3, text = "Space Used: %d"..tostring(full_percentage).."%" }
+    widget.text { term = monitor, y = 3, text = "Space Used: "..tostring(full_percentage).."%" }
     widget.bar  { term = monitor, y = 4, value = full_percentage, max_value = 100 }
 
     widget.text { term = monitor, y = 6, text = "Space Free: "..tostring(empty_percentage).."%" }
