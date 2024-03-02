@@ -73,10 +73,10 @@ return function(context)
     
 
 
-    widget.text { term = monitor, y = 3, text = ("Space Used: %d%s"):format(full_percentage, "%") }
+    widget.text { term = monitor, y = 3, text = ("Space Used: %d"):format(full_percentage).."%" }
     widget.bar  { term = monitor, y = 4, value = full_percentage, max_value = 100 }
 
-    widget.text { term = monitor, y = 6, text = ("Space Free: %d%s"):format(empty_percentage, "%") }
+    widget.text { term = monitor, y = 6, text = ("Space Free: %d"):format(empty_percentage).."%" }
     widget.bar  { term = monitor, y = 7, value = empty_percentage, max_value = 100 }
 
     local hot_furnaces, cold_furnaces = 0, 0
