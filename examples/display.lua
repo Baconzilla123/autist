@@ -64,20 +64,20 @@ return function(context)
     empty_percentage = math.ceil((empty_slots/total_slots) * 100)
 
     widget.text { term = monitor, y = 1, text = "Storage System Info" }
+
+    --widget.text { term = monitor, y = 2, text = ("Slots: %d/%d"):format(used_slots, total_slots) }
+    --widget.bar  { term = monitor, y = 3, value = used_slots, max_value = total_slots }
+
+    --widget.text { term = monitor, y = 5, text = ("Slots (full): %.1f/%d"):format(full_slots, total_slots) }
+    --widget.bar  { term = monitor, y = 6, value = full_slots, max_value = total_slots }
     
-    widget.text { term = monitor, y = 2, text = ("Slots: %d/%d"):format(used_slots, total_slots) }
-    widget.bar  { term = monitor, y = 3, value = used_slots, max_value = total_slots }
-
-    widget.text { term = monitor, y = 5, text = ("Slots (full): %.1f/%d"):format(full_slots, total_slots) }
-    widget.bar  { term = monitor, y = 6, value = full_slots, max_value = total_slots }
-    
 
 
-    --widget.text { term = monitor, y = 3, text = ("Space Used: %d"):format(full_percentage) }
-    --widget.bar  { term = monitor, y = 4, value = full_percentage, max_value = 100 }
+    widget.text { term = monitor, y = 3, text = ("Space Used: %d%s"):format(full_percentage, "%") }
+    widget.bar  { term = monitor, y = 4, value = full_percentage, max_value = 100 }
 
-    --widget.text { term = monitor, y = 6, text = ("Space Free: %d"):format(empty_percentage) }
-    --widget.bar  { term = monitor, y = 7, value = empty_percentage, max_value = 100 }
+    widget.text { term = monitor, y = 6, text = ("Space Free: %d%s"):format(empty_percentage, "%") }
+    widget.bar  { term = monitor, y = 7, value = empty_percentage, max_value = 100 }
 
     local hot_furnaces, cold_furnaces = 0, 0
     for _ in pairs(furnaces.hot_furnaces) do hot_furnaces = hot_furnaces + 1 end
