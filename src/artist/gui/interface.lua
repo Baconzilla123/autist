@@ -116,7 +116,7 @@ return function(context, extract_items)
           x = 1, y = 1, width = width, fg = "white", bg = "black", placeholder = "Search...",
           changed = function(value) item_list:set_filter(value) end,
         },
-        item_list,
+        item_list
         --gui.Button {x = width - 1, y = height - 1, text = "?", fg = "white", bg = "blue", bd = "black", run = push_help },
       },
     }
