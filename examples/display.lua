@@ -49,11 +49,11 @@ return function(context)
           -- Look up the item's metadata in the cache to get the max stack size.
           -- If the item isn't available, assume the slot is full.
           local item = items.item_cache[slot.hash]
-          if item and item.details then
-            full_slots = full_slots + (slot.count / item.details.maxCount)
-          else
-            full_slots = full_slots + 1
-          end
+          --if item and item.details then
+            --full_slots = full_slots + (slot.count / item.details.maxCount)
+          --else
+          full_slots = full_slots + 1
+          --end
         else
           empty_slots = empty_slots + 1
         end
