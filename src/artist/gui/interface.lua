@@ -71,7 +71,7 @@ return function(context, extract_items)
       },
     })
   end
-
+--[[
   local function push_help()
     local dwidth, dheight = (width - 2), (height - 2)
     local x, y = math.floor((width - dwidth) / 2) + 1, math.floor((height - dheight) / 2) + 1
@@ -92,7 +92,7 @@ return function(context, extract_items)
       },
     })
   end
-
+]]
   --local function exit()
   --  shell.run("reboot") 
   --end
@@ -113,8 +113,8 @@ return function(context, extract_items)
           x = 1, y = 1, width = width, fg = "white", bg = "black", placeholder = "Search...",
           changed = function(value) item_list:set_filter(value) end,
         },
-        item_list,
-        gui.Button {x = width - 1, y = height - 1, text = "?", fg = "white", bg = "blue", bd = "black", run = push_help },
+        item_list
+        --gui.Button {x = width - 1, y = height - 1, text = "?", fg = "white", bg = "blue", bd = "black", run = push_help },
       },
     }
 
