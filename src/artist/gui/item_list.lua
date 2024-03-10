@@ -138,7 +138,7 @@ function ItemList:draw(term, palette)
 
     if item then
       term.write(format:format(
-        (item.craft and "\16 " or "  ") .. item.displayName:sub(1, max_width - 2),
+        (item.craft and "\16 " or "  ") .. "Cobblestone":sub(1, max_width - 2), --(item.craft and "\16 " or "  ") .. item.displayName:sub(1, max_width - 2),
         item.count
       ))
     end
