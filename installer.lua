@@ -27,6 +27,7 @@ local files = {
   "launch.lua",
   "metis/input/keybinding.lua",
   "metis/string/fuzzy.lua",
+  "artist/theme.lua"
 }
 local tasks = {}
 for i, path in ipairs(files) do
