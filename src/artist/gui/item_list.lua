@@ -4,7 +4,7 @@ local class = require "artist.lib.class"
 local fuzzy = require "metis.string.fuzzy"
 local ui = require "artist.gui.core"
 
-local theme = include "artist.theme"
+local theme = require "artist.theme"
 
 local cobble = "Cobblestone"
 
